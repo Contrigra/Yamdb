@@ -1,1 +1,2 @@
-ignore ./api/migrations, .api_yamdb/settings.py
+[flake8]
+exclude = .git, ./api/migrations, ./tests, ./api_yamdb/settings.py
