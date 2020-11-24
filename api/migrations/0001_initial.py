@@ -32,11 +32,11 @@ class Migration(migrations.Migration):
                                                      verbose_name='superuser status')),
                 ('username', models.CharField(error_messages={
                     'unique': 'A user with that username already exists.'},
-                                              help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
-                                              max_length=150, unique=True,
-                                              validators=[
-                                                  django.contrib.auth.validators.UnicodeUsernameValidator()],
-                                              verbose_name='username')),
+                    help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
+                    max_length=150, unique=True,
+                    validators=[
+                        django.contrib.auth.validators.UnicodeUsernameValidator()],
+                    verbose_name='username')),
                 ('first_name', models.CharField(blank=True, max_length=30,
                                                 verbose_name='first name')),
                 ('last_name', models.CharField(blank=True, max_length=150,
