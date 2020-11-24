@@ -1,0 +1,1 @@
+ignore ./api/migrations, .api_yamdb/settings.py
