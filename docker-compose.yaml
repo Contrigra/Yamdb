@@ -17,7 +17,7 @@ services:
       - ./.env
 
   web:
-    image: contrigra/api_yamdb
+    image: contrigra/api_yamdb:latest
     restart: always
     volumes:
       - static_volume:/code/static
