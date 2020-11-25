@@ -1,5 +1,5 @@
 # api_yamdb
-![django-app workflow](https://github.com/Contrigra/yamdb_final/workflows/django-app%20workflow/badge.svg)
+![yamdb_workflow](https://github.com/Contrigra/yamdb_final/workflows/django-app%20workflow/badge.svg)
 
 **REST API** for **YaMDb** service - *movie, book* and *music* reviews
  database. Team project of [Praktikum  students by Yandex](https://praktikum.yandex.ru/)
