@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: django-app workflow
+name: yamdb_workflow
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -65,6 +65,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
+            sudo docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
             sudo docker pull contrigra/api_yamdb
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 contrigra/api_yamdb
