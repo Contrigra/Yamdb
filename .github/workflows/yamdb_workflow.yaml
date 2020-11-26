@@ -55,6 +55,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
+      - name: Copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          source: './.env, nginx/default.conf, ./docker-compose.yaml'
+          target: '/home/contrigra/code'
+
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -63,11 +73,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            sudo docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
-            sudo docker pull contrigra/api_yamdb
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 contrigra/api_yamdb
-
+            cd ~
+            cd ./code
+            sudo docker rmi contrigra/yamdb_final -f
+            sudo docker pull contrigra/yamdb_final:latest
+            sudo docker-compose up --force-recreate -d web
   send_message:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
