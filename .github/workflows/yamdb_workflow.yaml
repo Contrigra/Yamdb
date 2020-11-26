@@ -77,7 +77,6 @@ jobs:
           script: |
             cd ~
             cd ./code
-            sudo docker rmi contrigra/api_yamdb -f
             sudo docker pull contrigra/api_yamdb:latest
             sudo docker-compose up --force-recreate -d web
 
