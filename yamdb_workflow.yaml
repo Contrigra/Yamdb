@@ -77,7 +77,6 @@ jobs:
           script: |
             cd ~
             cd ./code
-            sudo mv default.conf ./nginx/
             sudo docker-compose up
 
   send_message:
