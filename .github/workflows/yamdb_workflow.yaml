@@ -75,9 +75,8 @@ jobs:
           script: |
             cd ~
             cd ./code
-            sudo docker rmi contrigra/yamdb_final -f
-            sudo docker pull contrigra/yamdb_final:latest
-            sudo docker-compose up --force-recreate -d web
+            sudo docker-compose up
+
   send_message:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
