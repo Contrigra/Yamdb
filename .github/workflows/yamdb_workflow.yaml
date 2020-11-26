@@ -65,8 +65,7 @@ jobs:
           source: "./.env, nginx/default.conf, ./docker-compose.yaml"
           target: "/home/contrigra/code"
 
-
-          - name: executing remote ssh commands to deploy
+      - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
