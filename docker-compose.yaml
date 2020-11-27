@@ -6,10 +6,6 @@ services:
     image: postgres:12.4
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    expose:
-      - "5433"
-    ports:
-      - "5433:5433"
     env_file:
       - ./.env
 
