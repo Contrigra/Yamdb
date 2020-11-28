@@ -21,6 +21,9 @@ ALLOWED_HOSTS = ['*']
 MESSAGE_THEME = os.getenv('MESSAGE_THEME')
 MESSAGE_SENDER = os.getenv('MESSAGE_SENDER')
 
+from dotenv import load_dotenv
+
+load_dotenv()
 # Application definition
 
 INSTALLED_APPS = [
