@@ -23,7 +23,6 @@ ALLOWED_HOSTS = ['*']
 MESSAGE_THEME = os.getenv('MESSAGE_THEME')
 MESSAGE_SENDER = os.getenv('MESSAGE_SENDER')
 
-
 # Application definition
 
 INSTALLED_APPS = [

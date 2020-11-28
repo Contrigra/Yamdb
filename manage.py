@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api_yamdb.settings')
     try:
